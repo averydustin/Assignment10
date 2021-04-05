@@ -1,0 +1,50 @@
+﻿
+
+@model IndexViewModel
+
+@*@foreach (var x in Model.BowlingLeague)
+{
+    <p>@x.BowlerFirstName</p>
+}*@
+
+
+<div class="jumbotron" style="font-size:x-large">
+    @ViewBag.Title
+</div>
+
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th style="padding:20px">Bowler First Name</th>
+            <th style="padding:20px">Bowler Middle Initial</th>
+            <th style="padding:20px">Bowler Last Name</th>
+            <th style="padding:20px">Address</th>
+            <th style="padding:20px">City</th>
+            <th style="padding:20px">State</th>
+            <th style="padding:20px">Zip</th>
+            <th style="padding:20px">Phone</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <!--iterates through the model and displays data for each class-->
+        @foreach (var x in Model.BowlingLeague)
+        {
+        <tr>
+            <td style="padding:20px">@x.BowlerFirstName</td>
+            <td style="padding:20px">@x.BowlerMiddleInit</td>
+            <td style="padding:20px">@x.BowlerLastName</td>
+            <td style="padding:20px">@x.BowlerAddress</td>
+            <td style="padding:20px">@x.BowlerCity</td>
+            <td style="padding:20px">@x.BowlerState</td>
+            <td style="padding:20px">@x.BowlerZip</td>
+            <td style="padding:20px">@x.BowlerPhoneNumber</td>
+
+
+        </tr>
+        }
+    </tbody>
+</table>
+<div class="btn-group pull-right m-1 align-content-center" style="align-items:center;" page-info="@Model.pageNumberingInfo" page-url-team="@Model.Team" >
+</div>
